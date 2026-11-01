@@ -3,6 +3,7 @@ import { Barlow_Condensed, Inter } from "next/font/google";
 import Providers from "@/providers/Providers";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 
 const displayFont = Barlow_Condensed({
   subsets: ["latin"],
@@ -36,6 +37,7 @@ export default function RootLayout({
         <Providers>
           <Navbar />
           <main className="min-h-screen">{children}</main>
+          <Footer />
         </Providers>
       </body>
     </html>
