@@ -1,5 +1,6 @@
 import Container from "@/components/shared/Container";
 import RegisterForm from "@/components/auth/RegisterForm";
+import GoogleButton from "@/components/auth/GoogleButton";
 
 export const metadata = { title: "Register | StudioSpace" };
 
@@ -12,6 +13,8 @@ export default function RegisterPage() {
                     Join StudioSpace to book or host creative spaces.
                 </p>
                 <RegisterForm />
+                <div className="divider my-6">OR</div>
+                <GoogleButton />
             </div>
         </Container>
     );

@@ -1,4 +1,9 @@
+"use client";
+
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { toast } from "sonner";
+import { authClient } from "@/lib/auth-client";
 
 const menuLinks = [
     { label: "Dashboard", href: "/dashboard" },
@@ -14,7 +19,15 @@ export default function UserMenu({
     name: string;
     image?: string;
 }) {
+    const router = useRouter();
     const firstLetter = name.charAt(0).toUpperCase();
+
+    const handleLogout = async () => {
+        await authClient.signOut();
+        toast.success("Logged out successfully");
+        router.push("/");
+        router.refresh();
+    };
 
     return (
         <div className="dropdown dropdown-end dropdown-hover">
@@ -42,7 +55,9 @@ export default function UserMenu({
                     </li>
                 ))}
                 <li>
-                    <button type="button">Logout</button>
+                    <button type="button" onClick={handleLogout}>
+                        Logout
+                    </button>
                 </li>
             </ul>
         </div>

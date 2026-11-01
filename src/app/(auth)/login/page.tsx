@@ -1,6 +1,7 @@
 import Container from "@/components/shared/Container";
 import LoginForm from "@/components/auth/LoginForm";
 import { getSafeRedirect } from "@/lib/utils";
+import GoogleButton from "@/components/auth/GoogleButton";
 
 export const metadata = { title: "Login | StudioSpace" };
 
@@ -20,6 +21,8 @@ export default async function LoginPage({
                     Log in to manage your studios and bookings.
                 </p>
                 <LoginForm redirectTo={redirectTo} />
+                <div className="divider my-6">OR</div>
+                <GoogleButton redirectTo={redirectTo} />
             </div>
         </Container>
     );

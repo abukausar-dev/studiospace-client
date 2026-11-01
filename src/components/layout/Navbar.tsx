@@ -8,15 +8,15 @@ import Logo from "@/components/layout/Logo";
 import UserMenu from "@/components/layout/UserMenu";
 import ThemeToggle from "@/components/shared/ThemeToggle";
 import Container from "@/components/shared/Container";
+import { authClient } from "@/lib/auth-client";
 import { navLinks } from "@/lib/constants";
 
 export default function Navbar() {
     const pathname = usePathname();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    // temporary hardcoded user state for demonstration purposes
-    const isLoggedIn = false; 
-    const demoUser = { name: "Demo User", image: "" };
+    const { data: session, isPending } = authClient.useSession();
+    const user = session?.user;
 
     const isActive = (href: string) => {
         if (href === "/") return pathname === "/";
@@ -47,9 +47,13 @@ export default function Navbar() {
                 <div className="flex items-center gap-2">
                     <ThemeToggle />
 
-                    {isLoggedIn ? (
-                        <UserMenu name={demoUser.name} image={demoUser.image} />
-                    ) : (
+                    {isPending && <div className="h-8 w-24 animate-pulse bg-base-300" />}
+
+                    {!isPending && user && (
+                        <UserMenu name={user.name} image={user.image || ""} />
+                    )}
+
+                    {!isPending && !user && (
                         <div className="hidden items-center gap-2 sm:flex">
                             <Link href="/login" className="btn btn-outline btn-sm">
                                 Login
@@ -84,7 +88,7 @@ export default function Navbar() {
                             </Link>
                         ))}
 
-                        {!isLoggedIn && (
+                        {!isPending && !user && (
                             <div className="flex gap-2 py-3">
                                 <Link href="/login" className="btn btn-outline btn-sm flex-1" onClick={() => setIsMenuOpen(false)}>
                                     Login
