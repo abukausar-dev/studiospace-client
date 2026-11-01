@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Barlow_Condensed, Inter } from "next/font/google";
 import Providers from "@/providers/Providers";
 import "./globals.css";
+import Navbar from "@/components/layout/Navbar";
 
 const displayFont = Barlow_Condensed({
   subsets: ["latin"],
@@ -31,8 +32,11 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${displayFont.variable} ${bodyFont.variable}`}
     >
-      <body>
-        <Providers>{children}</Providers>
+      <body className="bg-base-100 text-base-content">
+        <Providers>
+          <Navbar />
+          <main className="min-h-screen">{children}</main>
+        </Providers>
       </body>
     </html>
   );
