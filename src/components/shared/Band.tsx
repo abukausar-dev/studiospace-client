@@ -25,7 +25,7 @@ export default function Band({
             id={id}
             className={`relative overflow-hidden border-b border-base-content ${toneClasses[tone]} ${className}`}
         >
-            <Container className="py-16 md:py-24">{children}</Container>
+            <Container className="py-12 md:py-20">{children}</Container>
         </section>
     );
 }

@@ -17,6 +17,8 @@ export function Crosshair({ className = "" }: { className?: string }) {
 }
 
 const pixelPattern = [1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0];
+const blinkDurations = [3.2, 2.6, 3.8, 2.9, 3.4, 2.4, 3.6, 3.0, 2.7, 3.9, 2.5, 3.3];
+const blinkOffsets = [0, 1.3, 0.6, 2.1, 0.9, 1.7, 0.3, 2.4, 1.1, 0.5, 1.9, 1.5];
 
 export function PixelCluster({ className = "" }: { className?: string }) {
     return (
@@ -24,7 +26,16 @@ export function PixelCluster({ className = "" }: { className?: string }) {
             {pixelPattern.map((filled, index) => (
                 <span
                     key={index}
-                    className={`h-3 w-3 ${filled ? "bg-current" : "bg-transparent"}`}
+                    className={`h-2.5 w-2.5 sm:h-3 sm:w-3 ${filled ? "pixel-blink bg-current" : "bg-transparent"
+                        }`}
+                    style={
+                        filled
+                            ? {
+                                animationDuration: `${blinkDurations[index]}s`,
+                                animationDelay: `-${blinkOffsets[index]}s`,
+                            }
+                            : undefined
+                    }
                 />
             ))}
         </div>

@@ -34,6 +34,7 @@ export default function RootLayout({
       className={`${displayFont.variable} ${bodyFont.variable}`}
     >
       <body className="bg-base-100 text-base-content">
+        <div aria-hidden="true" className="grain-overlay" />
         <Providers>
           <Navbar />
           <main className="min-h-screen">{children}</main>

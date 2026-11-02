@@ -9,11 +9,11 @@ export default function Marquee({
 
     return (
         <div className={`overflow-hidden border-y border-base-content ${className}`}>
-            <div className="marquee-track flex w-max py-3">
+            <div className="marquee-track flex w-max py-2 md:py-3">
                 {doubled.map((item, index) => (
                     <span
                         key={index}
-                        className="flex items-center gap-8 whitespace-nowrap pr-8 font-display text-2xl uppercase md:text-4xl"
+                        className="flex items-center gap-6 whitespace-nowrap pr-6 font-display text-xl uppercase md:text-3xl"
                     >
                         {item}
                         <span aria-hidden="true">✦</span>

@@ -15,7 +15,7 @@ export default function SectionHeading({
                     {label}
                 </p>
             )}
-            <h2 className="text-4xl md:text-6xl">{title}</h2>
+            <h2>{title}</h2>
             {description && <p className="mt-4 max-w-2xl opacity-80">{description}</p>}
         </div>
     );

@@ -87,10 +87,17 @@
   --font-sans: var(--font-body-loaded), system-ui, sans-serif;
 }
 
-/* ===== সব heading-এর একই স্টাইল ===== */
+/* ===== সব heading-এর একই স্টাইল ও মাপ ===== */
 @layer base {
   html {
+    font-size: 93.75%;
     scroll-behavior: smooth;
+  }
+
+  @media (min-width: 768px) {
+    html {
+      font-size: 100%;
+    }
   }
 
   h1,
@@ -100,9 +107,25 @@
     font-family: var(--font-display);
     font-weight: 400;
     text-transform: uppercase;
-    line-height: 0.92;
-    letter-spacing: 0.005em;
+    line-height: 1;
+    letter-spacing: 0.01em;
     text-wrap: balance;
+  }
+
+  h1 {
+    font-size: clamp(2.25rem, 6vw, 4rem);
+  }
+
+  h2 {
+    font-size: clamp(1.75rem, 4.5vw, 2.75rem);
+  }
+
+  h3 {
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
+  }
+
+  h4 {
+    font-size: 1.125rem;
   }
 
   ::selection {
@@ -119,14 +142,18 @@
 }
 
 /* ===== Grain: পুরো সাইটের ওপর দানাদার স্তর ===== */
-body::before {
-  content: "";
+.grain-overlay {
   position: fixed;
   inset: 0;
   z-index: 100;
   pointer-events: none;
-  opacity: 0.1;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.22;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+[data-theme="studiodark"] .grain-overlay {
+  filter: invert(1);
+  opacity: 0.14;
 }
 
 /* ===== Marquee: চলমান লেখা ===== */
@@ -165,6 +192,25 @@ body::before {
   animation: float-slow 6s ease-in-out infinite;
 }
 
+/* ===== বর্গ বিন্দুর মসৃণ জ্বলা-নেভা ===== */
+@keyframes pixel-blink {
+
+  0%,
+  100% {
+    opacity: 0.12;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.pixel-blink {
+  animation-name: pixel-blink;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
 /* ===== শুধু রেখার লেখা (outline text) ===== */
 .text-outline {
   color: transparent;
@@ -175,7 +221,8 @@ body::before {
 @media (prefers-reduced-motion: reduce) {
 
   .marquee-track,
-  .float-slow {
+  .float-slow,
+  .pixel-blink {
     animation: none;
   }
 }
