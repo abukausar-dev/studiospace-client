@@ -5,7 +5,7 @@ export default function Logo() {
     return (
         <Link href="/" className="flex items-center gap-2">
             <Aperture size={28} className="text-primary" />
-            <span className="font-display text-2xl font-extrabold uppercase tracking-tight">
+            <span className="font-display text-2xl uppercase tracking-tight">
                 StudioSpace.
             </span>
         </Link>

@@ -11,7 +11,7 @@ export default function SectionHeading({
         <div className="mb-10">
             {label && (
                 <p className="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-widest">
-                    <span className="inline-block h-2 w-2 bg-primary" />
+                    <span className="inline-block h-2 w-2 bg-current" />
                     {label}
                 </p>
             )}

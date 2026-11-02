@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { Barlow_Condensed, Inter } from "next/font/google";
+import { Anton, Inter } from "next/font/google";
 import Providers from "@/providers/Providers";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
-const displayFont = Barlow_Condensed({
+const displayFont = Anton({
   subsets: ["latin"],
-  weight: ["500", "600", "700", "800"],
+  weight: "400",
   variable: "--font-display-loaded",
 });
 

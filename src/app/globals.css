@@ -4,34 +4,34 @@
   themes: false;
 }
 
-/* ===== Light theme: Ivory + Black + Red ===== */
+/* ===== Light theme: Cream + Ink + Rust + Mustard ===== */
 @plugin "daisyui/theme" {
   name: "studiolight";
   default: true;
   color-scheme: light;
 
-  --color-base-100: #F4F2EE;
-  --color-base-200: #EBE8E2;
-  --color-base-300: #DAD6CE;
-  --color-base-content: #101010;
+  --color-base-100: #EADFC8;
+  --color-base-200: #E0D3B8;
+  --color-base-300: #CFC0A2;
+  --color-base-content: #111111;
 
-  --color-primary: #F43B30;
-  --color-primary-content: #101010;
-  --color-secondary: #101010;
-  --color-secondary-content: #F4F2EE;
-  --color-accent: #D92E24;
-  --color-accent-content: #F4F2EE;
-  --color-neutral: #101010;
-  --color-neutral-content: #F4F2EE;
+  --color-primary: #B83A22;
+  --color-primary-content: #F3EAD8;
+  --color-secondary: #111111;
+  --color-secondary-content: #F3EAD8;
+  --color-accent: #E0891A;
+  --color-accent-content: #111111;
+  --color-neutral: #111111;
+  --color-neutral-content: #F3EAD8;
 
-  --color-info: #3B82F6;
-  --color-info-content: #FFFFFF;
-  --color-success: #1F9D55;
-  --color-success-content: #FFFFFF;
-  --color-warning: #F59E0B;
-  --color-warning-content: #101010;
-  --color-error: #B91C1C;
-  --color-error-content: #FFFFFF;
+  --color-info: #2F6FB5;
+  --color-info-content: #F3EAD8;
+  --color-success: #2E7D4F;
+  --color-success-content: #F3EAD8;
+  --color-warning: #E8A317;
+  --color-warning-content: #111111;
+  --color-error: #B3261E;
+  --color-error-content: #F3EAD8;
 
   --radius-selector: 0rem;
   --radius-field: 0rem;
@@ -43,33 +43,33 @@
   --noise: 0;
 }
 
-/* ===== Dark theme: Black + Ivory + Red ===== */
+/* ===== Dark theme: Ink + Cream + Rust + Mustard ===== */
 @plugin "daisyui/theme" {
   name: "studiodark";
   color-scheme: dark;
 
-  --color-base-100: #101010;
-  --color-base-200: #181818;
-  --color-base-300: #262626;
-  --color-base-content: #F4F2EE;
+  --color-base-100: #121212;
+  --color-base-200: #1A1A1A;
+  --color-base-300: #2B2B2B;
+  --color-base-content: #EFE5D0;
 
-  --color-primary: #F43B30;
-  --color-primary-content: #101010;
-  --color-secondary: #F4F2EE;
-  --color-secondary-content: #101010;
-  --color-accent: #FF5A4F;
-  --color-accent-content: #101010;
-  --color-neutral: #F4F2EE;
-  --color-neutral-content: #101010;
+  --color-primary: #C8442A;
+  --color-primary-content: #F3EAD8;
+  --color-secondary: #EFE5D0;
+  --color-secondary-content: #111111;
+  --color-accent: #E0891A;
+  --color-accent-content: #111111;
+  --color-neutral: #EFE5D0;
+  --color-neutral-content: #111111;
 
-  --color-info: #60A5FA;
-  --color-info-content: #101010;
-  --color-success: #34D399;
-  --color-success-content: #101010;
-  --color-warning: #FBBF24;
-  --color-warning-content: #101010;
-  --color-error: #F87171;
-  --color-error-content: #101010;
+  --color-info: #6AA8F0;
+  --color-info-content: #111111;
+  --color-success: #4CC38A;
+  --color-success-content: #111111;
+  --color-warning: #F0B429;
+  --color-warning-content: #111111;
+  --color-error: #EF6B60;
+  --color-error-content: #111111;
 
   --radius-selector: 0rem;
   --radius-field: 0rem;
@@ -81,30 +81,101 @@
   --noise: 0;
 }
 
-/* ===== Fonts ===== */
+/* ===== ফন্ট ===== */
 @theme inline {
   --font-display: var(--font-display-loaded), "Arial Narrow", sans-serif;
   --font-sans: var(--font-body-loaded), system-ui, sans-serif;
 }
 
-/* ===== All heading styles ===== */
+/* ===== সব heading-এর একই স্টাইল ===== */
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 
   h1,
   h2,
   h3,
   h4 {
     font-family: var(--font-display);
-    font-weight: 800;
+    font-weight: 400;
     text-transform: uppercase;
-    letter-spacing: -0.01em;
-    line-height: 0.95;
+    line-height: 0.92;
+    letter-spacing: 0.005em;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background: var(--color-accent);
+    color: #111111;
   }
 }
 
-/* ===== Button styles ===== */
+/* ===== সব বাটনের একই চেহারা ===== */
 .btn {
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   font-weight: 700;
+}
+
+/* ===== Grain: পুরো সাইটের ওপর দানাদার স্তর ===== */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  opacity: 0.1;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ===== Marquee: চলমান লেখা ===== */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee 35s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* ===== ভাসমান সাজসজ্জা ===== */
+@keyframes float-slow {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+/* ===== শুধু রেখার লেখা (outline text) ===== */
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 2px currentColor;
+}
+
+/* ===== যারা animation চায় না, তাদের জন্য সব বন্ধ ===== */
+@media (prefers-reduced-motion: reduce) {
+
+  .marquee-track,
+  .float-slow {
+    animation: none;
+  }
 }
