@@ -7,6 +7,8 @@ import { ArrowUpRight } from "lucide-react";
 import Band from "@/components/shared/Band";
 import Marquee from "@/components/shared/Marquee";
 import HeroSlider from "@/components/home/HeroSlider";
+import FeaturedStudios from "@/components/home/FeaturedStudios";
+import BrowseCategories from "@/components/home/BrowseCategories";
 
 const categories = [
   "Photo Studios",
@@ -25,6 +27,12 @@ export default function Home() {
       <div className="bg-accent text-accent-content">
         <Marquee items={categories} />
       </div>
+
+      {/* Featured studios from MongoDB */}
+      <FeaturedStudios />
+
+      {/* Browse by category */}
+      <BrowseCategories />
 
       {/* Final homepage CTA */}
       <Band tone="red">
