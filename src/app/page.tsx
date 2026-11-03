@@ -11,6 +11,7 @@ import HeroSlider from "@/components/home/HeroSlider";
 import FeaturedStudios from "@/components/home/FeaturedStudios";
 import BrowseCategories from "@/components/home/BrowseCategories";
 import HowBookingWorks from "@/components/home/HowBookingWorks";
+import HostGuarantee from "@/components/home/HostGuarantee";
 
 const categories = [
   "Photo Studios",
@@ -31,7 +32,7 @@ export default function Home() {
         <Marquee items={categories} />
       </div>
 
-      {/* Dynamic featured studios */}
+      {/* Featured studios from MongoDB */}
       <FeaturedStudios />
 
       {/* Browse by category */}
@@ -39,6 +40,9 @@ export default function Home() {
 
       {/* How booking works */}
       <HowBookingWorks />
+
+      {/* Host guarantee and creator support */}
+      <HostGuarantee />
 
       {/* Final homepage CTA */}
       <Band tone="red">
