@@ -12,6 +12,7 @@ import FeaturedStudios from "@/components/home/FeaturedStudios";
 import BrowseCategories from "@/components/home/BrowseCategories";
 import HowBookingWorks from "@/components/home/HowBookingWorks";
 import HostGuarantee from "@/components/home/HostGuarantee";
+import PlatformStats from "@/components/home/PlatformStats";
 
 const categories = [
   "Photo Studios",
@@ -43,6 +44,9 @@ export default function Home() {
 
       {/* Host guarantee and creator support */}
       <HostGuarantee />
+
+      {/* Real platform statistics */}
+      <PlatformStats />
 
       {/* Final homepage CTA */}
       <Band tone="red">
