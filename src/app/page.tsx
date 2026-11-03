@@ -6,9 +6,11 @@ import { ArrowUpRight } from "lucide-react";
 
 import Band from "@/components/shared/Band";
 import Marquee from "@/components/shared/Marquee";
+
 import HeroSlider from "@/components/home/HeroSlider";
 import FeaturedStudios from "@/components/home/FeaturedStudios";
 import BrowseCategories from "@/components/home/BrowseCategories";
+import HowBookingWorks from "@/components/home/HowBookingWorks";
 
 const categories = [
   "Photo Studios",
@@ -21,6 +23,7 @@ const categories = [
 export default function Home() {
   return (
     <>
+      {/* Hero */}
       <HeroSlider />
 
       {/* Creative category marquee */}
@@ -28,11 +31,14 @@ export default function Home() {
         <Marquee items={categories} />
       </div>
 
-      {/* Featured studios from MongoDB */}
+      {/* Dynamic featured studios */}
       <FeaturedStudios />
 
       {/* Browse by category */}
       <BrowseCategories />
+
+      {/* How booking works */}
+      <HowBookingWorks />
 
       {/* Final homepage CTA */}
       <Band tone="red">
