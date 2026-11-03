@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { animate, useInView, useReducedMotion } from "motion/react";
+import { animate, useInView } from "motion/react";
 
 export default function CountUp({
     value,
@@ -12,7 +12,6 @@ export default function CountUp({
 }) {
     const ref = useRef<HTMLSpanElement>(null);
     const isInView = useInView(ref, { once: true });
-    const shouldReduce = useReducedMotion();
     const [current, setCurrent] = useState(0);
 
     useEffect(() => {
@@ -27,11 +26,9 @@ export default function CountUp({
         return () => controls.stop();
     }, [isInView, value]);
 
-    const shown = shouldReduce ? value : current;
-
     return (
         <span ref={ref}>
-            {shown}
+            {current}
             {suffix}
         </span>
     );

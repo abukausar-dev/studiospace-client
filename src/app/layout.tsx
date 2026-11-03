@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Anton, Inter } from "next/font/google";
 import Providers from "@/providers/Providers";
-import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import "./globals.css";
 
 const displayFont = Anton({
   subsets: ["latin"],

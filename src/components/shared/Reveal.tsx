@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion } from "motion/react";
+import { motion } from "motion/react";
 
 export default function Reveal({
     children,
@@ -11,12 +11,6 @@ export default function Reveal({
     delay?: number;
     className?: string;
 }) {
-    const shouldReduce = useReducedMotion();
-
-    if (shouldReduce) {
-        return <div className={className}>{children}</div>;
-    }
-
     return (
         <motion.div
             className={className}

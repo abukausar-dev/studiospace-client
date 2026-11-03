@@ -1,16 +1,16 @@
 import Container from "@/components/shared/Container";
 
-type Tone = "cream" | "ink" | "red" | "mustard";
+type Tone = "plain" | "ink" | "red" | "mustard";
 
 const toneClasses = {
-    cream: "bg-base-100 text-base-content",
+    plain: "bg-base-100 text-base-content",
     ink: "bg-neutral text-neutral-content",
     red: "bg-primary text-primary-content",
     mustard: "bg-accent text-accent-content",
 };
 
 export default function Band({
-    tone = "cream",
+    tone = "plain",
     children,
     className = "",
     id,
