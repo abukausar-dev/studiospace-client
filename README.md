@@ -6,7 +6,7 @@ StudioSpace is a high-performance peer-to-peer marketplace designed for creators
 
 ## 🔗 Important Links
 
-- **Live Application URL:** [https://YOUR-VERCEL-DEPLOYMENT-URL.vercel.app](https://YOUR-VERCEL-DEPLOYMENT-URL.vercel.app)
+- **Live Application URL:** [https://studiospace-client-three-rho.vercel.app](https://studiospace-client-three-rho.vercel.app/)
 - **Backend API URL:** [https://studiospace-server-2vfp.onrender.com](https://studiospace-server-2vfp.onrender.com)
 - **Client Repository:** [https://github.com/abukausar-dev/studiospace-client](https://github.com/abukausar-dev/studiospace-client)
 - **Server Repository:** [https://github.com/abukausar-dev/studiospace-server](https://github.com/abukausar-dev/studiospace-server)
