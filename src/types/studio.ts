@@ -8,10 +8,19 @@ export interface Studio {
     maxCapacity: number;
     location: string;
     imageUrl: string;
-    rating: number;
-    reviewCount: number;
+    gallery: string[];
     amenities: string[];
     overview: string;
+
+    ownerId: string;
+    ownerName: string;
+    ownerEmail: string;
+    ownerImage?: string;
+
+    rating: number;
+    reviewCount: number;
+    createdAt: string;
+    updatedAt: string;
 }
 
 export interface Pagination {
