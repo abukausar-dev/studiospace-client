@@ -50,7 +50,7 @@ const guarantees = [
 
 export default function HostGuarantee() {
     return (
-        <section className="relative overflow-hidden bg-base-200 px-5 py-20 text-base-content sm:px-10 lg:px-16 lg:py-28">
+        <section id="about-us" className="scroll-mt-20 relative overflow-hidden bg-base-200 px-5 py-20 text-base-content sm:px-10 lg:px-16 lg:py-28">
             {/* Decorative background element */}
             <div
                 aria-hidden="true"

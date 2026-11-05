@@ -50,7 +50,7 @@ const steps = [
 
 export default function HowBookingWorks() {
     return (
-        <section className="relative overflow-hidden bg-base-100 px-5 py-20 sm:px-10 lg:px-16 lg:py-28">
+        <section id="how-it-works" className=" scroll-mt-20 relative overflow-hidden bg-base-100 px-5 py-20 sm:px-10 lg:px-16 lg:py-28">
             <div className="mx-auto max-w-[1400px]">
 
                 {/* Editorial heading */}
